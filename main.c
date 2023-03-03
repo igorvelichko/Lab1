@@ -2,37 +2,86 @@
 #include <stdlib.h>
 #include <math.h> 
 int main(int argc, char *argv[]) {
-	double s = 2;
-	int x;
-	float D, a, b, c, x1, x2, sqrtD;
-	printf("Enter a: ");
-	scanf("%f", &a);
-	printf("Enter b: ");
-	scanf("%f", &b);
-	printf("Enter c: ");
-	scanf("%f", &c);
-	printf("%.2fx ^ %.2lf + %.2fx + %.2f = 0 \n", a, s, b, c);
-	D = pow(b, s)-4*a*c;
-	printf("D = %.0f^%.0f - 4 * %.0f * %.0f \n", b, s, a, c);
-	sqrtD = sqrtl(D);
+	double a, b, c, d, e, f, g, m, n, A, B;
+	printf("Enter number: ");
+	scanf("%lf", &a);
+	printf("Enter number: ");
+	scanf("%lf", &b);
+	printf("Enter number: ");
+	scanf("%lf", &c);
+	printf("Enter number: ");
+	scanf("%lf", &d);
+	printf("Enter number: ");
+	scanf("%lf", &e);
+	printf("Enter number: ");
+	scanf("%lf", &f);
+	printf("Enter number: ");
+	scanf("%lf", &g);
+	printf("Enter number: ");
+	scanf("%lf", &m);
+	printf("Enter number: ");
+	scanf("%lf", &n);
 	
-	if(D > 0){
-		printf("sqrtD = %.0f \n", sqrtD);
-		x1 = (-b - sqrtD)/(2*a);
-	    x2 = (-b + sqrtD)/(2*a);
-	    printf("x1 - %.2f, x2 - %.2f \n", x1, x2);	
-	}
-	if(D < 0){
-		printf("sqrtD = %.0f \n", sqrtD);
-		printf("Korney net \n");
-	}
-	if(D == 0){
-		printf("sqrtD = %.0f \n", sqrtD);
-	    x1 = -b/(2*a);
-	    printf("x1 - %.2f \n", x1);
-	}
+	double mas[9] = {
+	a, b, c,
+	d, e, f,
+	g, m, n
+	};
+	
+    for(int i = 0; i<9; i++){
+	    printf("%.2lf ", mas[i]);
+		if(i == 2 || i == 5){
+			printf("\n");
+			i++;
+			printf("%.2lf ", mas[i]);
+			
+		}
+		if(i == 8){
+			printf("\n");
+		};
+	};
+	A = mas[0] + mas[4] + mas[8];
+	B = mas[6] + mas[4] + mas[2];
+	printf("%.2lf \n", A);
+	printf("%.2lf \n", B); 
+	
+	int x, y, z, w;
+	printf("Enter number: ");
+	scanf("%d", &x);
+	printf("Enter number: ");
+	scanf("%d", &y);
+	printf("Enter number: ");
+	scanf("%d", &z);
+	printf("Enter number: ");
+	scanf("%d", &w); 
+	
+	
+	int massive[4] = {
+	x, y,
+	z, w
+	};
+	for(int i = 0; i < 4; i++){
+		printf("%d ", massive[i]);
+		if(i == 1){
+			printf("\n");
+			i++;
+			printf("%d ", massive[i]);
+		}
+		if(i == 3){
+			printf("\n");
+		}
+	};
+	
+	for(int i = 0; i < 4; i++){
+		if(i % 2 == 0){
+			argc = massive[i] * x + massive[i+1] * z;
+			printf("%d ", argc);
+		}
+		if(i % 2 == 1){
+			argc = massive[i-1] * y + massive[i] * w;
+			printf("%d \n", argc);
+		}
+	};
 	return 0;
-	
-	
 }
  
